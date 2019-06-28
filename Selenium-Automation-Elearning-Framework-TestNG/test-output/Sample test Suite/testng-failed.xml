@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Sample test Suite]" parallel="tests">
+  <parameter name="mybrowser" value="firefox"/>
+  <test name="Sample test" parallel="tests">
+    <parameter name="mybrowser" value="chrome"/>
+    <classes>
+      <class name="com.training.sanity.tests.MyLoginPara"/>
+    </classes>
+  </test> <!-- Sample test -->
+  <test name="Sample test1" parallel="tests">
+    <parameter name="mybrowser" value="firefox"/>
+    <classes>
+      <class name="com.training.sanity.tests.MyLoginPara"/>
+    </classes>
+  </test> <!-- Sample test1 -->
+  <test name="Sample test1(failed)" parallel="tests">
+    <parameter name="mybrowser" value="firefox"/>
+    <classes>
+      <class name="com.training.sanity.tests.MyLoginPara">
+        <methods>
+          <include name="validLoginTest"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="extentretport"/>
+          <include name="extentretport"/>
+          <include name="setUpBeforeClass"/>
+          <include name="setUpBeforeClass"/>
+        </methods>
+      </class> <!-- com.training.sanity.tests.MyLoginPara -->
+    </classes>
+  </test> <!-- Sample test1(failed) -->
+  <test name="Sample test(failed)" parallel="tests">
+    <parameter name="mybrowser" value="chrome"/>
+    <classes>
+      <class name="com.training.sanity.tests.MyLoginPara">
+        <methods>
+          <include name="validLoginTest"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="extentretport"/>
+          <include name="extentretport"/>
+          <include name="setUpBeforeClass"/>
+          <include name="setUpBeforeClass"/>
+        </methods>
+      </class> <!-- com.training.sanity.tests.MyLoginPara -->
+    </classes>
+  </test> <!-- Sample test(failed) -->
+</suite> <!-- Failed suite [Sample test Suite] -->
